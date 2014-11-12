@@ -11,9 +11,10 @@ else
     rvm_ruby='%{$fg[red]%}‹$(rbenv version | sed -e "s/ (set.*$//")›%{$reset_color%}'
   fi
 fi
+local hg_branch='$fg[red]$(hg_branch)%{$reset_color%}'
 local git_branch='$(git_prompt_info)%{$reset_color%}'
 
-PROMPT="╭─${user_host} ${current_dir} ${rvm_ruby} ${git_branch}
+PROMPT="[${hg_branch}]-${user_host} ${current_dir} ${rvm_ruby} ${git_branch} 
 ╰─%B$%b "
 RPS1="${return_code}"
 

@@ -64,3 +64,7 @@ function hgic() {
 function hgoc() {
     hg outgoing "$@" | grep "changeset" | wc -l
 }
+
+function hg_branch() {
+    hg branch 2> /dev/null
+}
